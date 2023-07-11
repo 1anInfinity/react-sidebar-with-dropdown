@@ -1,35 +1,41 @@
 import DashboardPageLayout from "../pages/dashboard/DashboardPageLayout";
-import HomePage from "../pages/home/HomePage";
+import HomePage from "../pages/sidebar/HomePage";
 import { RouteType } from "./config";
-import DefaultPage from "../pages/dashboard/DefaultPage";
+import CalendarPage from "../pages/dashboard/CalendarPage";
 import DashboardIndex from "../pages/dashboard/DashboardIndex";
-import ChangelogPage from "../pages/changelog/ChangelogPage";
-import AnalyticsPage from "../pages/dashboard/AnalyticsPage";
-import SaasPage from "../pages/dashboard/SaasPage";
+import WebsitePage from "../pages/dashboard/WebsitePage";
+import UpdatesPage from "../pages/dashboard/UpdatesPage";
 import ComponentPageLayout from "../pages/component/ComponentPageLayout";
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import NotListedLocationOutlinedIcon from '@mui/icons-material/NotListedLocationOutlined';
+import PermDataSettingOutlinedIcon from '@mui/icons-material/PermDataSettingOutlined';
+import Diversity3OutlinedIcon from '@mui/icons-material/Diversity3Outlined';
 import AlertPage from "../pages/component/AlertPage";
 import ButtonPage from "../pages/component/ButtonPage";
-import InstallationPage from "../pages/installation/InstallationPage";
-import DocumentationPage from "../pages/documentation/DocumentationPage";
+import MainPage from "../pages/sidebar/MainPage";
+import ProjectsPage from "../pages/dashboard/ProjectsPage";
+import StaffMeetingPage from "../pages/staffmeeting/StaffMeetingPage";
+import sizeConfigs from "../configs/sizeConfigs";
+import { Typography } from "@mui/material";
 
 const appRoutes: RouteType[] = [
   {
     index: true,
-    element: <HomePage />,
-    state: "home"
+    element: <MainPage />,
+    state: "main"
   },
+  //installation
   {
-    path: "/installation",
-    element: <InstallationPage />,
-    state: "installation",
+    path: "/home",
+    element: <HomePage />,
+    state: "home",
     sidebarProps: {
-      displayText: "Installation",
-      icon: <FileDownloadOutlinedIcon />
+      displayText: "Home",
+      icon: <HomeOutlinedIcon />
     }
   },
   {
@@ -46,28 +52,43 @@ const appRoutes: RouteType[] = [
         element: <DashboardIndex />,
         state: "dashboard.index"
       },
+      //Default
       {
-        path: "/dashboard/default",
-        element: <DefaultPage />,
-        state: "dashboard.default",
+        path: "/dashboard/calendar",
+        element: <CalendarPage />,
+        state: "dashboard.calendar",
         sidebarProps: {
-          displayText: "Default"
+          displayText: "Calendar",
+          icon: <CalendarMonthOutlinedIcon sx={{ fontSize: 18 }}/>
         },
       },
+      //Analytics
       {
-        path: "/dashboard/analytics",
-        element: <AnalyticsPage />,
-        state: "dashboard.analytics",
+        path: "/dashboard/Updates",
+        element: <UpdatesPage />,
+        state: "dashboard.updates",
         sidebarProps: {
-          displayText: "Analytic"
+          displayText: "Updates",
+          icon: <NotListedLocationOutlinedIcon sx={{ fontSize: 18 }}/>
+        }
+      },
+      //saas
+      {
+        path: "/dashboard/Website",
+        element: <WebsitePage />,
+        state: "dashboard.website",
+        sidebarProps: {
+          displayText: "Website",
+          icon: <LanguageOutlinedIcon sx={{ fontSize: 18 }}/>
         }
       },
       {
-        path: "/dashboard/saas",
-        element: <SaasPage />,
-        state: "dashboard.saas",
+        path: "/dashboard/Projects",
+        element: <ProjectsPage />,
+        state: "dashboard.projects",
         sidebarProps: {
-          displayText: "Saas"
+          displayText: "Projects",
+          icon: <PermDataSettingOutlinedIcon sx={{ fontSize: 18 }}/>
         }
       }
     ]
@@ -100,21 +121,12 @@ const appRoutes: RouteType[] = [
     ]
   },
   {
-    path: "/documentation",
-    element: <DocumentationPage />,
-    state: "documentation",
+    path: "/staffmeeting",
+    element: <StaffMeetingPage />,
+    state: "staffmeeting",
     sidebarProps: {
-      displayText: "Documentation",
-      icon: <ArticleOutlinedIcon />
-    }
-  },
-  {
-    path: "/changelog",
-    element: <ChangelogPage />,
-    state: "changelog",
-    sidebarProps: {
-      displayText: "Changelog",
-      icon: <FormatListBulletedOutlinedIcon />
+      displayText: "StaffMeeting",
+      icon: <Diversity3OutlinedIcon sx={{ fontSize: 18 }}/>
     }
   }
 ];

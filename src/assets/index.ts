@@ -1,6 +1,7 @@
 const assets = {
   images: {
-    logo: require("./images/typescript-logo-240.png")
+    logo: require("./images/MFI LOGO TRANSPARENT.png"),
+    josepht: require("./images/JosephTucal.png")
   }
 };
 

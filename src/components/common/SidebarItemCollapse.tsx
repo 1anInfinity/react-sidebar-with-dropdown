@@ -32,7 +32,7 @@ const SidebarItemCollapse = ({ item }: Props) => {
             "&: hover": {
               backgroundColor: colorConfigs.sidebar.hoverBg
             },
-            paddingY: "12px",
+            paddingY: "8px",
             paddingX: "24px"
           }}
         >

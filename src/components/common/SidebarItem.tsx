@@ -22,7 +22,7 @@ const SidebarItem = ({ item }: Props) => {
             backgroundColor: colorConfigs.sidebar.hoverBg
           },
           backgroundColor: appState === item.state ? colorConfigs.sidebar.activeBg : "unset",
-          paddingY: "12px",
+          paddingY: "8px",
           paddingX: "24px"
         }}
       >

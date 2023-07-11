@@ -1,4 +1,4 @@
-import { Avatar, Drawer, List, Stack, Toolbar } from "@mui/material";
+import { Avatar, Drawer, List, Stack, Toolbar, Typography } from "@mui/material";
 import assets from "../../assets";
 import colorConfigs from "../../configs/colorConfigs";
 import sizeConfigs from "../../configs/sizeConfigs";
@@ -23,13 +23,14 @@ const Sidebar = () => {
       }}
     >
       <List disablePadding>
-        <Toolbar sx={{ marginBottom: "20px" }}>
+        <Toolbar sx={{ marginTop: "20px" }}>
           <Stack
             sx={{ width: "100%" }}
             direction="row"
-            justifyContent="center"
+            justifyContent="left"
           >
-            <Avatar src={assets.images.logo} />
+          <Avatar src={assets.images.josepht} />
+          <Typography variant="h6" align="center" fontSize={"15px"} marginLeft={2} marginTop={1}>Joseph Ian Tucal</Typography>
           </Stack>
         </Toolbar>
         {appRoutes.map((route, index) => (
